@@ -1,0 +1,64 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+interface Props {
+  navItems: { label: string; href: string }[];
+  currentLang: string;
+}
+const { navItems, currentLang } = Astro.props;
+
+let enUrl = '#'; // Placeholder, actual value computed in Header
+let trUrl = '#'; // Placeholder, actual value computed in Header
+const currentPath = Astro.url.pathname;
+if (currentLang === 'tr') {
+    enUrl = currentPath.replace(/^\/tr/, '') || '/';
+    trUrl = currentPath;
+} else {
+    trUrl = '/tr' + (currentPath === '/' ? '' : currentPath);
+    enUrl = currentPath;
+}
+if (enUrl === '') enUrl = '/';
+---
+
+<div
+  id="mobile-menu-panel"
+  class:list={[
+    "fixed inset-0 z-40 bg-white md:hidden transform transition-transform ease-in-out duration-300",
+    { "-translate-x-full": true }, // Always hidden initially, JS handles toggle
+    { "translate-x-0": false },
+  ]}
+>
+  <div class="flex justify-end p-4">
+    <button id="close-mobile-menu-btn" class="text-gray-500 hover:text-primary focus:outline-none">
+      <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+  <nav class="flex flex-col items-center space-y-6 pt-10">
+    {navItems.map(item => (
+      <a
+        href={getRelativeLocaleUrl(currentLang, item.href)}
+        class="text-xl text-gray-700 hover:text-primary font-medium transition-colors"
+      >
+        {item.label}
+      </a>
+    ))}
+    <!-- Language Switcher within mobile menu -->
+    <div class="flex items-center space-x-3 text-lg font-medium pt-8">
+        <a 
+            href={enUrl} 
+            class={`transition-colors ${currentLang === 'en' ? 'text-primary font-bold' : 'text-gray-400 hover:text-gray-600'}`}
+        >
+            EN
+        </a>
+        <span class="text-gray-300">|</span>
+        <a 
+            href={trUrl} 
+            class={`transition-colors ${currentLang === 'tr' ? 'text-primary font-bold' : 'text-gray-400 hover:text-gray-600'}`}
+        >
+            TR
+        </a>
+    </div>
+  </nav>
+</div>

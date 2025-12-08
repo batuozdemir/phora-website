@@ -1,0 +1,74 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+export async function getStaticPaths() {
+  const allSolutions = await getCollection('solutions');
+  const enSolutions = allSolutions.filter(entry => entry.slug.startsWith('en/'));
+  
+  return enSolutions.map(entry => ({
+    params: { slug: entry.slug.replace('en/', '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const lang = Astro.currentLocale || 'en';
+---
+
+<Layout title={entry.data.title}>
+    <div class="bg-primary-dark py-20 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center justify-center p-3 bg-white/10 rounded-xl mb-6 backdrop-blur-sm">
+                <span class="font-bold tracking-wider uppercase text-sm">Solutions</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">{entry.data.title}</h1>
+            <p class="text-xl text-teal-100 max-w-2xl mx-auto">{entry.data.description}</p>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <!-- Sidebar / Key Focus Areas -->
+            <div class="lg:col-span-1 space-y-8">
+                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4 border-b pb-2">Key Focus Areas</h3>
+                    <ul class="space-y-3">
+                        {entry.data.focus.map(item => (
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 text-accent mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                                {item}
+                            </li>
+                        ))}
+                    </ul>
+                 </div>
+
+                 <div class="bg-teal-50 p-6 rounded-xl border border-teal-100">
+                    <h3 class="text-lg font-bold text-primary mb-4">Common Challenges</h3>
+                    <div class="space-y-4">
+                        {entry.data.challenges.map(challenge => (
+                            <div>
+                                <h4 class="font-bold text-gray-900 text-sm">{challenge.title}</h4>
+                                <p class="text-sm text-gray-600">{challenge.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                 </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="lg:col-span-2 prose prose-lg prose-teal max-w-none text-gray-700">
+                <Content />
+                
+                <div class="mt-12 pt-8 border-t border-gray-200 not-prose">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Ready to optimize your production?</h3>
+                     <a href={getRelativeLocaleUrl(lang, 'contact')} class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark transition-colors">
+                        Contact Phora TMC
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>

@@ -1,11 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { getRelativeLocaleUrl } from 'astro:i18n';
-
-const lang = Astro.currentLocale || 'en';
+import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout title="Home">
+<Layout title="Anasayfa">
 	<!-- Hero Section -->
 	<section class="relative bg-gradient-to-r from-primary-dark to-primary text-white overflow-hidden">
         <div class="absolute inset-0 bg-black opacity-20"></div>
@@ -14,20 +11,20 @@ const lang = Astro.currentLocale || 'en';
 
 		<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 flex flex-col items-start justify-center min-h-[600px]">
 			<div class="inline-block px-3 py-1 mb-6 text-xs font-semibold tracking-wider text-teal-900 uppercase bg-teal-100 rounded-full">
-				Official Distributor: Arm & Hammer Animal Health
+				Resmi Distribütör: Arm & Hammer Animal Health
 			</div>
 			<h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
-				Total Control in <br/>Animal Production
+				Hayvansal Üretimde <br/>Tam Kontrol
 			</h1>
 			<p class="text-xl md:text-2xl text-teal-50 max-w-2xl mb-10 font-light">
-				Advanced solutions for gut welfare, antibiotic-free production, and performance optimization.
+				Bağırsak sağlığı, antibiyotiksiz üretim ve performans optimizasyonu için gelişmiş çözümler.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4">
-				<a href={getRelativeLocaleUrl(lang, 'contact')} class="px-8 py-4 bg-accent hover:bg-orange-600 text-white font-bold rounded-md transition-shadow shadow-lg hover:shadow-xl text-center">
-					Get in Touch
+				<a href="/tr/contact" class="px-8 py-4 bg-accent hover:bg-orange-600 text-white font-bold rounded-md transition-shadow shadow-lg hover:shadow-xl text-center">
+					İletişime Geçin
 				</a>
-				<a href={getRelativeLocaleUrl(lang, 'about')} class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold rounded-md transition-colors text-center">
-					Learn More
+				<a href="/tr/about" class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold rounded-md transition-colors text-center">
+					Daha Fazla Bilgi
 				</a>
 			</div>
 		</div>
@@ -37,36 +34,36 @@ const lang = Astro.currentLocale || 'en';
 	<section class="py-20 bg-white">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Solutions</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Targeted technologies for specific species challenges.</p>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Çözümlerimiz</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Spesifik tür zorlukları için hedeflenmiş teknolojiler.</p>
             </div>
 
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 				<!-- Ruminant -->
-				<a href={getRelativeLocaleUrl(lang, 'solutions/ruminant')} class="group block p-8 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary hover:shadow-lg transition-all duration-300">
+				<a href="/tr/solutions/ruminant" class="group block p-8 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary hover:shadow-lg transition-all duration-300">
                     <div class="h-12 w-12 bg-teal-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
-                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
                     </div>
 					<h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary">Ruminant</h3>
-					<p class="text-gray-600">Gut health, feed efficiency, and milk yield solutions.</p>
+					<p class="text-gray-600">Bağırsak sağlığı, yem verimliliği ve süt verimi çözümleri.</p>
 				</a>
 
 				<!-- Poultry -->
-				<a href={getRelativeLocaleUrl(lang, 'solutions/poultry')} class="group block p-8 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary hover:shadow-lg transition-all duration-300">
+				<a href="/tr/solutions/poultry" class="group block p-8 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary hover:shadow-lg transition-all duration-300">
                     <div class="h-12 w-12 bg-teal-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
                          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
                     </div>
-					<h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary">Poultry</h3>
-					<p class="text-gray-600">Antibiotic-free production and pathogen control.</p>
+					<h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary">Kanatlı</h3>
+					<p class="text-gray-600">Antibiyotiksiz üretim ve patojen kontrolü.</p>
 				</a>
 
 				<!-- Aquaculture -->
-				<a href={getRelativeLocaleUrl(lang, 'solutions/aquaculture')} class="group block p-8 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary hover:shadow-lg transition-all duration-300">
+				<a href="/tr/solutions/aquaculture" class="group block p-8 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary hover:shadow-lg transition-all duration-300">
                     <div class="h-12 w-12 bg-teal-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                     </div>
-					<h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary">Aquaculture</h3>
-					<p class="text-gray-600">Specialized solutions for aquatic health.</p>
+					<h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary">Su Ürünleri</h3>
+					<p class="text-gray-600">Su ürünleri sağlığı için özel çözümler.</p>
 				</a>
 			</div>
 		</div>
@@ -80,32 +77,32 @@ const lang = Astro.currentLocale || 'en';
                     <div class="relative rounded-2xl overflow-hidden shadow-2xl">
                          <img 
                             src="https://images.unsplash.com/photo-1579541539659-6c38b25539d9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                            alt="Clinical lab with scientists" 
+                            alt="Klinik laboratuvar ve bilim insanları" 
                             class="w-full h-96 object-cover"
                          />
                     </div>
                 </div>
                 <div class="md:w-1/2">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Science-Backed Solutions</h2>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Bilimsel Destekli Çözümler</h2>
                     <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                        We focus on <strong>gut welfare</strong>, <strong>antibiotic-free production</strong>, and <strong>performance optimization</strong>. By utilizing Refined Functional Carbohydrates (RFCs) technology, we help producers suppress pathogens and prevent cell destruction.
+                        <strong>Bağırsak sağlığı</strong>, <strong>antibiyotiksiz üretim</strong> ve <strong>performans optimizasyonu</strong> üzerine odaklanıyoruz. Rafine Fonksiyonel Karbonhidratlar (RFC) teknolojisini kullanarak üreticilerin patojenleri baskılamasına ve hücre yıkımını önlemesine yardımcı oluyoruz.
                     </p>
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-start">
                              <svg class="h-6 w-6 text-primary mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                             <span class="text-gray-700">Improve Gut Integrity (Tight Junctions)</span>
+                             <span class="text-gray-700">Bağırsak Bütünlüğünü İyileştirin (Sıkı Bağlantılar)</span>
                         </li>
                         <li class="flex items-start">
                              <svg class="h-6 w-6 text-primary mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                             <span class="text-gray-700">Control Pathogens (E. coli, Salmonella)</span>
+                             <span class="text-gray-700">Patojenleri Kontrol Edin (E. coli, Salmonella)</span>
                         </li>
                         <li class="flex items-start">
                              <svg class="h-6 w-6 text-primary mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                             <span class="text-gray-700">Mitigate Mycotoxin Risks</span>
+                             <span class="text-gray-700">Mikotoksin Risklerini Azaltın</span>
                         </li>
                     </ul>
-                    <a href={getRelativeLocaleUrl(lang, 'about')} class="text-primary font-bold hover:text-primary-dark inline-flex items-center">
-                        Read more about our technology 
+                    <a href="/tr/about" class="text-primary font-bold hover:text-primary-dark inline-flex items-center">
+                        Teknolojimiz hakkında daha fazla bilgi edinin
                         <svg class="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                     </a>
                 </div>

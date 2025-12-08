@@ -1,0 +1,84 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import MobileMenu from './MobileMenu.astro'; // Import MobileMenu
+
+const currentLang = Astro.currentLocale || 'en';
+
+const nav = [
+  { label: currentLang === 'en' ? 'Home' : 'Anasayfa', href: '' }, // empty string for home relative
+  { label: currentLang === 'en' ? 'About Us' : 'Hakkımızda', href: 'about' },
+  { label: currentLang === 'en' ? 'Solutions' : 'Çözümler', href: 'solutions' }, 
+  { label: currentLang === 'en' ? 'Contact' : 'İletişim', href: 'contact' },
+];
+
+const currentPath = Astro.url.pathname;
+let enUrl = currentPath;
+let trUrl = currentPath;
+
+if (currentLang === 'tr') {
+    // Current is TR (/tr/...) -> EN is just removing /tr
+    enUrl = currentPath.replace(/^\/tr/, '') || '/';
+} else {
+    // Current is EN (/) -> TR is adding /tr
+    // Handle root / case
+    trUrl = '/tr' + (currentPath === '/' ? '' : currentPath);
+}
+
+// Ensure no double slashes if path was just /
+if (enUrl === '') enUrl = '/';
+---
+<header class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-20 items-center">
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex items-center">
+        <a href={getRelativeLocaleUrl(currentLang, '')} class="group">
+          <img src="/phora-logo.svg" alt="Phora TMC" class="h-12 w-auto" />
+        </a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex space-x-8">
+        {nav.map(item => (
+          <a 
+            href={getRelativeLocaleUrl(currentLang, item.href)} 
+            class="text-gray-700 hover:text-primary font-medium transition-colors text-sm uppercase tracking-wide"
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Lang Switcher -->
+      <div class="flex items-center space-x-3 text-sm font-medium border-l border-gray-200 pl-4 ml-4">
+        <a 
+            href={enUrl} 
+            class={`transition-colors ${currentLang === 'en' ? 'text-primary font-bold' : 'text-gray-400 hover:text-gray-600'}`}
+        >
+            EN
+        </a>
+        <span class="text-gray-300">|</span>
+        <a 
+            href={trUrl} 
+            class={`transition-colors ${currentLang === 'tr' ? 'text-primary font-bold' : 'text-gray-400 hover:text-gray-600'}`}
+        >
+            TR
+        </a>
+      </div>
+      
+       <!-- Mobile Menu Button -->
+       <div class="md:hidden ml-4">
+         <button id="open-mobile-menu-btn" class="text-gray-500 hover:text-primary focus:outline-none">
+           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+           </svg>
+         </button>
+       </div>
+    </div>
+  </div>
+</header>
+
+<MobileMenu isOpen={false} navItems={nav} currentLang={currentLang} />
+
+<script src="../components/mobileMenu.client.js" is:client="load"></script>
+
