@@ -78,7 +78,43 @@ if (enUrl === '') enUrl = '/';
   </div>
 </header>
 
-<MobileMenu isOpen={false} navItems={nav} currentLang={currentLang} />
+<MobileMenu navItems={nav} currentLang={currentLang} />
 
-<script src="../components/mobileMenu.client.js" is:client="load"></script>
+<script>
+  function setupMobileMenu() {
+    const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+    const openButton = document.getElementById('open-mobile-menu-btn');
+    const closeButton = document.getElementById('close-mobile-menu-btn');
+
+    if (!mobileMenuPanel || !openButton || !closeButton) return;
+
+    // Remove existing listeners to avoid duplicates if re-ran
+    const newOpenButton = openButton.cloneNode(true);
+    openButton.parentNode.replaceChild(newOpenButton, openButton);
+    
+    const newCloseButton = closeButton.cloneNode(true);
+    closeButton.parentNode.replaceChild(newCloseButton, closeButton);
+
+    function toggleMobileMenu() {
+        mobileMenuPanel.classList.toggle('translate-x-full');
+        mobileMenuPanel.classList.toggle('translate-x-0');
+    }
+
+    newOpenButton.addEventListener('click', toggleMobileMenu);
+    newCloseButton.addEventListener('click', toggleMobileMenu);
+
+    mobileMenuPanel.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (mobileMenuPanel.classList.contains('translate-x-0')) {
+          toggleMobileMenu();
+        }
+      });
+    });
+  }
+
+  // Run on initial load
+  document.addEventListener('DOMContentLoaded', setupMobileMenu);
+  // Run on view transitions (if added later)
+  document.addEventListener('astro:page-load', setupMobileMenu);
+</script>
 
