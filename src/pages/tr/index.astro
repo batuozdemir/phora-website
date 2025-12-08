@@ -1,5 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import scientistImage from '../../assets/scientist.jpeg';
 ---
 
 <Layout title="Anasayfa">
@@ -45,7 +47,7 @@ import Layout from '../../layouts/Layout.astro';
                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
                     </div>
 					<h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary">Ruminant</h3>
-					<p class="text-gray-600">Bağırsak sağlığı, yem verimliliği ve süt verimi çözümleri.</p>
+					<p class="text-gray-600">Bağırsak sağlığı, yem verimliliği ve performans çözümleri.</p>
 				</a>
 
 				<!-- Poultry -->
@@ -75,8 +77,8 @@ import Layout from '../../layouts/Layout.astro';
             <div class="flex flex-col md:flex-row items-center gap-16">
                 <div class="md:w-1/2">
                     <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-                         <img 
-                            src="https://images.unsplash.com/photo-1579541539659-6c38b25539d9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                         <Image 
+                            src={scientistImage} 
                             alt="Klinik laboratuvar ve bilim insanları" 
                             class="w-full h-96 object-cover"
                          />

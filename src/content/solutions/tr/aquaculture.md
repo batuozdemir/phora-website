@@ -1,6 +1,6 @@
 ---
 title: "Su Ürünleri Çözümleri"
-description: "Su ürünleri üretimi için özel sağlık çözümleri."
+description: "Kültür balıkçılığı için özel sağlık çözümleri."
 focus: ["Su Canlıları Sağlığı", "Hastalık Direnci", "Büyüme Performansı"]
 challenges:
   - title: "Patojen Yönetimi"
@@ -11,6 +11,6 @@ challenges:
     description: "Çevresel stresin hafifletilmesi."
 ---
 
-## Su Ürünleri için Tam Kontrol
+## Su Ürünleri Beslenmesinde Total Kontrol
 
 Su ürünleri çözümlerimiz, su canlılarının sağlığını ve büyümesini desteklemek için tasarlanmıştır. Bağışıklık yanıtını iyileştirerek ve patojenleri yöneterek başarılı bir hasat sağlamanıza yardımcı oluyoruz.

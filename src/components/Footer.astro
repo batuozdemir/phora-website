@@ -1,5 +1,7 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n';
+import { Image } from 'astro:assets';
+import phoraLogo from '../assets/phora-logo.svg';
 
 const currentLang = Astro.currentLocale || 'en';
 const year = new Date().getFullYear();
@@ -19,7 +21,7 @@ const links = [
       <!-- Brand & Partner -->
       <div class="space-y-4">
         <div>
-            <img src="/phora-logo.svg" alt="Phora TMC" class="h-10 w-auto brightness-0 invert opacity-90" />
+            <Image src={phoraLogo} alt="Phora TMC" class="h-10 w-auto brightness-0 invert opacity-90" loading="eager" />
             <p class="text-gray-400 text-sm mt-4">Total Control in Animal Production.</p>
         </div>
         
