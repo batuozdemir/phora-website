@@ -12,5 +12,8 @@
     "@tailwindcss/vite": "^4.1.17",
     "astro": "^5.16.4",
     "tailwindcss": "^4.1.17"
+  },
+  "devDependencies": {
+    "puppeteer": "^24.32.1"
   }
 }

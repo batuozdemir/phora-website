@@ -1,10 +1,10 @@
 # Project Background: Phora Corporate Website
 
 ## 1. Project Overview
-**Client:** Phora (Phora TMC)
+**Client:** Phora (Phora Hayvan Sağlığı)
 **Industry:** Animal Health & Nutrition (Feed Additives)
 **Type:** B2B Corporate Website
-**Key Function:** Official Distributor for **Arm & Hammer Animal Health** in Turkey.
+**Key Function:** Official Distributor for **Arm & Hammer Animal Nutrition** in Turkey.
 **Core Markets:** Turkey, with global partners in USA and India.
 
 **Mission:**
