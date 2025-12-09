@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets';
+import ahLogo from '../assets/ah-logo.svg';
+import opticonLogo from '../assets/opticon-logo.png';
+import reffcoLogo from '../assets/reffco-logo.png';
+import saifeLogo from '../assets/saife-logo.png';
+
+const partners = [
+    { name: 'Arm & Hammer Animal Nutrition', logo: ahLogo, alt: 'Arm & Hammer Animal Nutrition Logo' },
+    { name: 'Opticon GmbH', logo: opticonLogo, alt: 'Opticon GmbH Logo' },
+    { name: 'Reffco', logo: reffcoLogo, alt: 'Reffco Logo' },
+    { name: 'Saife Vetmed', logo: saifeLogo, alt: 'Saife Vetmed Logo' },
+];
+---
+
+<section class="bg-gray-50 py-8 md:py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Label (Optional, as per spec) -->
+        <p class="text-center text-sm uppercase tracking-wide text-gray-500 mb-8 font-semibold">Our Global Network</p>
+
+        <div class="flex flex-wrap justify-center gap-8 md:gap-16 items-center">
+            {partners.map(partner => (
+                <div class="flex items-center justify-center">
+                    <Image
+                        src={partner.logo}
+                        alt={partner.alt}
+                        class="h-8 md:h-12 w-auto grayscale opacity-70 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
+                        loading="eager"
+                        densities={[1.5, 2]}
+                        format="webp"
+                    />
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

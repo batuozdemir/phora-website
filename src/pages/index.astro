@@ -3,37 +3,48 @@ import Layout from '../layouts/Layout.astro';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { Image } from 'astro:assets';
 import scientistImage from '../assets/scientist.jpeg';
+import chickenFurImage from '../assets/chicken_fur.jpg'; // Import the new image
+import GlobalPartners from '../components/GlobalPartners.astro'; // Import GlobalPartners component
 
 const lang = Astro.currentLocale || 'en';
 ---
 
 <Layout title="Home">
 	<!-- Hero Section -->
-	<section class="relative bg-gradient-to-r from-primary-dark to-primary text-white overflow-hidden">
-        <div class="absolute inset-0 bg-black opacity-20"></div>
-        <!-- Abstract Background Pattern -->
-        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 30px 30px;"></div>
+	<section class="relative text-white overflow-hidden">
+        <Image
+            src={chickenFurImage}
+            alt="Phora Animal Production Background"
+            class="absolute inset-0 w-full h-full object-cover"
+            widths={[400, 800, 1200, 1600]}
+            sizes="(max-width: 768px) 100vw, 100vw"
+            loading="eager"
+            format="webp"
+        />
+        <div class="absolute inset-0 bg-primary/85"></div> <!-- Primary Deep Green overlay -->
 
-		<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 flex flex-col items-start justify-center min-h-[600px]">
-			<div class="inline-block px-3 py-1 mb-6 text-xs font-semibold tracking-wider text-teal-900 uppercase bg-teal-100 rounded-full">
+		<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 flex flex-col items-center justify-center text-center min-h-[600px]">
+			<div class="inline-block px-3 py-1 mb-6 text-xs font-semibold tracking-wider text-white uppercase bg-white/20 rounded-full">
 				Official Distributor: Arm & Hammer Animal Nutrition
 			</div>
-			<h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
+			<h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight text-white">
 				Total Control in <br/>Animal Production
 			</h1>
-			<p class="text-xl md:text-2xl text-teal-50 max-w-2xl mb-10 font-light">
-				Advanced solutions for gut welfare, antibiotic-free production, and performance optimization.
+			<p class="text-xl md:text-2xl text-white max-w-2xl mb-10 font-light">
+				Advanced biotechnology solutions for gut welfare, antibiotic reduction, and performance optimization.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4">
-				<a href={getRelativeLocaleUrl(lang, 'contact')} class="px-8 py-4 bg-accent hover:bg-orange-600 text-white font-bold rounded-md transition-shadow shadow-lg hover:shadow-xl text-center">
-					Get in Touch
+				<a href={getRelativeLocaleUrl(lang, 'solutions')} class="px-8 py-4 bg-accent hover:bg-orange-600 text-white font-bold rounded-md transition-shadow shadow-lg hover:shadow-xl text-center">
+					Our Technologies
 				</a>
-				<a href={getRelativeLocaleUrl(lang, 'about')} class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold rounded-md transition-colors text-center">
-					Learn More
+				<a href={getRelativeLocaleUrl(lang, 'contact')} class="px-8 py-4 bg-transparent border border-white text-white font-semibold rounded-md transition-colors hover:bg-white/10 text-center">
+					Contact Specialists
 				</a>
 			</div>
 		</div>
 	</section>
+
+    <GlobalPartners />
 
 	<!-- Segment Navigation (Solutions) -->
 	<section class="py-20 bg-white">

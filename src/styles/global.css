@@ -1,10 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #006D77;
-  --color-primary-dark: #004d40;
-  --color-accent: #F97316;
+  --color-primary: #004d40; /* Deep Green */
+  --color-primary-light: #006D77; /* Existing Primary, now lighter */
+  --color-accent: #F97316; /* Orange/Gold for buttons */
   --color-bg-light: #F8F9FA;
+  --color-gray-50: #F9FAFB;   /* Metallic Silver/Grey background */
+  --color-gray-300: #D1D5DB; /* Metallic Silver/Grey border */
+  --color-gray-700: #374151; /* Body text color */
+  --color-gray-900: #111827; /* Heading text color */
 }
 
 html,
@@ -14,5 +18,10 @@ body {
   height: 100%;
   background-color: var(--color-bg-light);
   font-family: 'Inter', sans-serif;
-  color: #1f2937; /* Gray 800 */
+  color: var(--color-gray-700); /* Use new body text variable */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-gray-900); /* Use new heading text variable */
+    font-weight: 700; /* Bold headings by default */
 }
