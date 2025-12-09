@@ -11,6 +11,6 @@ challenges:
     description: "Binding agents for feed safety."
 ---
 
-## Total Control for Poultry
+#### Total Control for Poultry
 
 In the rapidly evolving poultry industry, antibiotic-free production is key. Our solutions strengthen gut integrity and provide robust pathogen control, ensuring safe and efficient production.

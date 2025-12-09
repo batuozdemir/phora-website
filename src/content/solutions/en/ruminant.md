@@ -11,6 +11,6 @@ challenges:
     description: "Broad-spectrum control in feed."
 ---
 
-## Total Control for Ruminants
+#### Total Control for Ruminants
 
 Our ruminant solutions are designed to address the most critical challenges in dairy and beef production. By leveraging RFC technology and other patented technologies, we help producers achieve higher milk yields and better feed efficiency while maintaining animal welfare.

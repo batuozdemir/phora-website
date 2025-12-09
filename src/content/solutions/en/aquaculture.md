@@ -11,6 +11,6 @@ challenges:
     description: "Mitigating environmental stress."
 ---
 
-## Total Control for Aquaculture
+#### Total Control for Aquaculture
 
 Our aquaculture solutions are designed to support the health and growth of aquatic species. By improving immune response and managing pathogens, we help secure a successful harvest.
