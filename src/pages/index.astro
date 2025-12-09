@@ -21,7 +21,7 @@ const lang = Astro.currentLocale || 'en';
             loading="eager"
             format="webp"
         />
-        <div class="absolute inset-0 bg-primary/85"></div> <!-- Primary Deep Green overlay -->
+        <div class="absolute inset-0 bg-primary/90"></div> <!-- Primary Deep Green overlay -->
 
 		<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 flex flex-col items-center justify-center text-center min-h-[600px]">
 			<div class="inline-block px-3 py-1 mb-6 text-xs font-semibold tracking-wider text-white uppercase bg-white/20 rounded-full">
@@ -46,41 +46,44 @@ const lang = Astro.currentLocale || 'en';
 
     <GlobalPartners />
 
-	<!-- Segment Navigation (Solutions) -->
-	<section class="py-20 bg-white">
+	<!-- Key Value Prop (The "Three Pillars") -->
+	<section class="py-20 bg-white border-b border-gray-100">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Solutions</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Targeted technologies for specific species challenges.</p>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Core Technologies</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Scientific mechanisms driving animal health and profitability.</p>
             </div>
 
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-				<!-- Ruminant -->
-				<a href={getRelativeLocaleUrl(lang, 'solutions/ruminant')} class="group block p-8 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary hover:shadow-lg transition-all duration-300">
-                    <div class="h-12 w-12 bg-teal-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
-                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+				<!-- Biosecurity & Pathogen Control -->
+				<div class="group block p-8 bg-white rounded-lg border border-gray-200 hover:border-primary hover:shadow-sm transition-all duration-300">
+                    <div class="h-12 w-12 bg-gray-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors text-primary">
+                        <!-- Shield Icon -->
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                     </div>
-					<h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary">Ruminant</h3>
-					<p class="text-gray-600">Gut health, feed efficiency, and milk yield solutions.</p>
-				</a>
+					<h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary">Biosecurity & Pathogen Control</h3>
+					<p class="text-gray-600 leading-relaxed text-sm">Preventing colonization of E. coli and Salmonella without antibiotics using RFC™ technology.</p>
+				</div>
 
-				<!-- Poultry -->
-				<a href={getRelativeLocaleUrl(lang, 'solutions/poultry')} class="group block p-8 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary hover:shadow-lg transition-all duration-300">
-                    <div class="h-12 w-12 bg-teal-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
-                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+				<!-- Gut Integrity -->
+				<div class="group block p-8 bg-white rounded-lg border border-gray-200 hover:border-primary hover:shadow-sm transition-all duration-300">
+                    <div class="h-12 w-12 bg-gray-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors text-primary">
+                        <!-- Cell/Structure Icon -->
+                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
                     </div>
-					<h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary">Poultry</h3>
-					<p class="text-gray-600">Antibiotic-free production and pathogen control.</p>
-				</a>
+					<h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary">Gut Integrity</h3>
+					<p class="text-gray-600 leading-relaxed text-sm">Strengthening tight junctions to prevent Leaky Gut Syndrome and improve nutrient absorption.</p>
+				</div>
 
-				<!-- Aquaculture -->
-				<a href={getRelativeLocaleUrl(lang, 'solutions/aquaculture')} class="group block p-8 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary hover:shadow-lg transition-all duration-300">
-                    <div class="h-12 w-12 bg-teal-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
-                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+				<!-- Performance ROI -->
+				<div class="group block p-8 bg-white rounded-lg border border-gray-200 hover:border-primary hover:shadow-sm transition-all duration-300">
+                    <div class="h-12 w-12 bg-gray-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors text-primary">
+                        <!-- Chart/ROI Icon -->
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
                     </div>
-					<h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary">Aquaculture</h3>
-					<p class="text-gray-600">Specialized solutions for aquatic health.</p>
-				</a>
+					<h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary">Performance ROI</h3>
+					<p class="text-gray-600 leading-relaxed text-sm">Optimizing Feed Conversion Rates (FCR) and metabolic efficiency for measurable profitability.</p>
+				</div>
 			</div>
 		</div>
 	</section>

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #004d40; /* Deep Green */
+  --color-primary: #003d33; /* Darker Deep Green */
   --color-primary-light: #006D77; /* Existing Primary, now lighter */
   --color-accent: #F97316; /* Orange/Gold for buttons */
   --color-bg-light: #F8F9FA;

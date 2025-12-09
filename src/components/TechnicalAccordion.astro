@@ -1,0 +1,64 @@
+---
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+
+const translations = {
+  en: {
+    toggleLabel: "View Technical Specification",
+    tightJunctionsTitle: "Tight Junctions (Gut Integrity)",
+    tightJunctionsText: "The gut is lined by a single layer of epithelial cells that facilitate nutrient absorption and act as a barrier against toxins. Tight junction proteins are the key components regulating this permeability. RFC™s strengthen these tight junctions, preventing their separation and the resulting 'Leaky Gut Syndrome,' which allows harmful molecules to pass through.",
+    pathogenControlTitle: "Pathogen Control (RFCs vs. Bacteria)",
+    pathogenControlText: "Antibiotic therapy can disturb intestinal flora and lead to resistance. RFC™ technology offers a non-antibiotic strategy by binding to receptors on pathogens like E. coli and Salmonella. This prevents them from attaching to the intestinal wall, effectively suppressing their colonization and reducing the risk of enteric infections.",
+    endotoxinsTitle: "Endotoxins & Mycotoxins",
+    endotoxinsText: "During stress or infection, translocation of endotoxins through the intestinal wall can lead to systemic shock. RFC™s help bind these toxins and support the immune system. Additionally, they act as a broad-spectrum control against mycotoxins in feed, reducing their adverse effects on metabolic function and performance."
+  },
+  tr: {
+    toggleLabel: "Teknik Özellikleri Görüntüle",
+    tightJunctionsTitle: "Sıkı Bağlantılar (Bağırsak Bütünlüğü)",
+    tightJunctionsText: "Bağırsak, besin emilimini kolaylaştıran ve toksinlere karşı bariyer görevi gören tek katmanlı epitel hücrelerle kaplıdır. Sıkı bağlantı proteinleri bu geçirgenliği düzenleyen temel bileşenlerdir. RFC™ teknolojisi bu sıkı bağlantıları güçlendirerek ayrılmalarını önler ve zararlı moleküllerin geçişine izin veren 'Sızdıran Bağırsak Sendromu'nun önüne geçer.",
+    pathogenControlTitle: "Patojen Kontrolü (RFC ve Bakteriler)",
+    pathogenControlText: "Antibiyotik tedavisi bağırsak florasını bozabilir ve dirence yol açabilir. RFC™ teknolojisi, E. coli ve Salmonella gibi patojenlerdeki reseptörlere bağlanarak antibiyotik içermeyen bir strateji sunar. Bu, patojenlerin bağırsak duvarına tutunmasını önleyerek kolonizasyonlarını etkili bir şekilde baskılar ve enterik enfeksiyon riskini azaltır.",
+    endotoxinsTitle: "Endotoksinler ve Mikotoksinler",
+    endotoxinsText: "Stres veya enfeksiyon sırasında, endotoksinlerin bağırsak duvarından translokasyonu sistemik şoka yol açabilir. RFC™ler bu toksinleri bağlamaya ve bağışıklık sistemini desteklemeye yardımcı olur. Ayrıca, yemdeki mikotoksinlere karşı geniş spektrumlu bir kontrol görevi görerek metabolik fonksiyon ve performans üzerindeki olumsuz etkilerini azaltır."
+  }
+};
+
+const t = translations[lang === 'tr' ? 'tr' : 'en'];
+---
+
+<div class="mt-8 border-t border-gray-200 pt-6">
+  <details class="group bg-gray-50 rounded-lg border border-gray-200 overflow-hidden">
+    <summary class="flex items-center justify-between p-4 cursor-pointer select-none font-bold text-primary hover:bg-gray-100 transition-colors">
+      <span>{t.toggleLabel}</span>
+      <span class="transform group-open:rotate-180 transition-transform duration-200">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </span>
+    </summary>
+    <div class="p-6 text-gray-700 space-y-6 bg-white border-t border-gray-200">
+      
+      <!-- Section 1 -->
+      <div>
+        <h4 class="text-lg font-bold text-gray-900 mb-2">{t.tightJunctionsTitle}</h4>
+        <p class="leading-relaxed">{t.tightJunctionsText}</p>
+      </div>
+
+      <!-- Section 2 -->
+      <div>
+        <h4 class="text-lg font-bold text-gray-900 mb-2">{t.pathogenControlTitle}</h4>
+        <p class="leading-relaxed">{t.pathogenControlText}</p>
+      </div>
+
+      <!-- Section 3 -->
+      <div>
+        <h4 class="text-lg font-bold text-gray-900 mb-2">{t.endotoxinsTitle}</h4>
+        <p class="leading-relaxed">{t.endotoxinsText}</p>
+      </div>
+
+    </div>
+  </details>
+</div>

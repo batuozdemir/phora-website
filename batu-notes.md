@@ -1,0 +1,1 @@
+instead of "Contact Phora" in button, we should say "Partner with us now."
