@@ -9,6 +9,13 @@ challenges:
     description: "Doğal savunmanın güçlendirilmesi."
   - title: "Stres Azaltma"
     description: "Çevresel stresin hafifletilmesi."
+technicalSpecifications:
+  - title: "Hastalık Direnci"
+    description: "Bakteriyel ve viral zorluklara karşı korumak için doğal bağışıklığı güçlendirme. Su ortamında hazırlıklı olmak kilit öneme sahiptir."
+  - title: "Stres Azaltma"
+    description: "Elleçleme, nakliye ve çevresel dalgalanmaların stok üzerindeki etkisini azaltma. Kritik dönemlerde iştahın ve büyümenin korunmasına yardımcı olur."
+  - title: "Büyüme Performansı"
+    description: "Daha iyi Yem Dönüşüm Oranı (FCR) ve daha hızlı büyüme oranları için besin kullanımını artırma. Verimli sindirim, daha az atık ve daha iyi su kalitesi sağlar."
 ---
 
 #### Su Ürünleri Beslenmesinde Total Kontrol

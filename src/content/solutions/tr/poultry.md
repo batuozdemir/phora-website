@@ -9,6 +9,13 @@ challenges:
     description: "Salmonella ve E. coli baskılanması."
   - title: "Mikotoksin Kontrolü"
     description: "Yem güvenliği için bağlayıcı ajanlar."
+technicalSpecifications:
+  - title: "Sıkı Bağlantılar (Bağırsak Bütünlüğü)"
+    description: "'Sızdıran Bağırsak' sendromunu önlemek ve besin emilimini artırmak için epitel bariyerinin güçlendirilmesi. RFC'ler bağırsak astarının koruyucuları olarak hareket eder."
+  - title: "Patojen Kontrolü (Salmonella ve E. coli)"
+    description: "Patojenlerin kolonizasyonunu önlemek ve yatay bulaşmayı azaltmak için aglütinasyon. Bu antibiyotik içermeyen yaklaşım, patojen yükünü etkili bir şekilde düşürür."
+  - title: "Koksidiyoz Yönetimi"
+    description: "Eimeria türlerine karşı bağışıklığı destekleme ve zorluklar sırasında performansı koruma; koksidiyostatlar veya aşılarla sinerjik çalışır."
 ---
 
 #### Kanatlılar Beslenmesinde Total Kontrol

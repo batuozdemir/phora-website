@@ -10,6 +10,10 @@ const solutionsCollection = defineCollection({
         title: z.string(),
         description: z.string()
     })),
+    technicalSpecifications: z.array(z.object({
+        title: z.string(),
+        description: z.string()
+    })).optional(),
   }),
 });
 
