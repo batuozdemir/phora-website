@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #003d33; /* Darker Deep Green */
+  --color-primary: #00302A; /* Darker Deep Green */
   --color-primary-light: #006D77; /* Existing Primary, now lighter */
   --color-accent: #F97316; /* Orange/Gold for buttons */
   --color-bg-light: #F8F9FA;
@@ -22,6 +22,5 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: var(--color-gray-900); /* Use new heading text variable */
-    font-weight: 700; /* Bold headings by default */
+    /* Rely on Tailwind classes for color and font-weight */
 }
