@@ -76,7 +76,7 @@ This document outlines the step-by-step execution plan to modernize the Phora A.
     *   Update form fields (Drop-downs for "I am a..." and "Inquiry Type").
     *   Update Submit button text.
 2.  **Update `src/components/Footer.astro`:**
-    *   Add LinkedIn icon.
+
     *   Organize Quick Links.
 
 ---

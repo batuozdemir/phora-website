@@ -4,7 +4,7 @@ description: "Bağırsak bütünlüğü ve patojen kontrolü ile kanatlı üreti
 focus: ["Antibiyotiksiz üretim", "Bağırsak Bütünlüğü", "Patojen Kontrolü"]
 challenges:
   - title: "Bağırsak Bütünlüğü"
-    description: "Sıkı bağlantı (tight junction) koruması."
+    description: "Sıkı bağlantı proteinlerinin (tight junction) koruması."
   - title: "Patojen Kontrolü"
     description: "Salmonella ve E. coli baskılanması."
   - title: "Mikotoksin Kontrolü"

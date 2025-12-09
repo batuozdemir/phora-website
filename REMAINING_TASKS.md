@@ -21,7 +21,7 @@ This document outlines the pending tasks to complete the Phora website moderniza
 ## 3. Footer Updates
 **Goal:** Enhance B2B networking and navigation.
 *   **Update `src/components/Footer.astro`:**
-    *   Add LinkedIn social icon.
+
     *   Ensure "Quick Links" are categorized clearly.
 
 ## 4. Mobile Navigation Fix

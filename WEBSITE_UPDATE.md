@@ -75,5 +75,5 @@
 *   **Button Text:** Change "Send Message" to "Connect with a Specialist."
 
 ## 7. Component: Footer
-*   **Add:** LinkedIn Social Icon (High priority for B2B).
+
 *   **Layout:** Ensure "Quick Links" are categorized clearly.
