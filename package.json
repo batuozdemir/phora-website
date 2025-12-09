@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
-    "puppeteer": "^24.32.1"
+    "puppeteer": "^24.32.1",
+    "wrangler": "^4.53.0"
   }
 }
