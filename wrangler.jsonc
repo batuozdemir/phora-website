@@ -1,8 +1,10 @@
 {
   "name": "phora-website",
   "compatibility_date": "2025-12-09",
+  "main": "./dist/_worker.js/index.js",
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     "not_found_handling": "404-page"
   },
   "observability": {

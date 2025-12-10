@@ -1,10 +1,10 @@
-export interface Env {
-  RESEND_API_KEY: string;
-}
+import type { APIRoute } from 'astro';
 
-export const onRequestPost: PagesFunction<Env> = async (context) => {
+export const prerender = false;
+
+export const POST: APIRoute = async ({ request, locals }) => {
   try {
-    const formData = await context.request.formData();
+    const formData = await request.formData();
     const name = formData.get('name') as string;
     const email = formData.get('email') as string;
     const role = formData.get('i_am_a') as string;
@@ -27,10 +27,21 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       <p>${message.replace(/\n/g, '<br>')}</p>
     `;
 
+    // Access the environment variable from the Cloudflare runtime
+    const RESEND_API_KEY = locals.runtime?.env?.RESEND_API_KEY;
+
+    if (!RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is missing');
+      return new Response(JSON.stringify({ error: "Server configuration error." }), {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
     const resendResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${context.env.RESEND_API_KEY}`,
+        'Authorization': `Bearer ${RESEND_API_KEY}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
