@@ -61,7 +61,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     } else {
       const errorData = await resendResponse.text();
       console.error('Resend API Error:', errorData);
-      return new Response(JSON.stringify({ error: `Failed to send email: ${errorData}` }), {
+      return new Response(JSON.stringify({ error: "Failed to send email." }), {
         status: 500,
         headers: { "Content-Type": "application/json" },
       });
