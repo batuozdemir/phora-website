@@ -28,6 +28,25 @@ if (currentLang === 'tr') {
 
 // Ensure no double slashes if path was just /
 if (enUrl === '') enUrl = '/';
+
+// Construct final URLs for language switcher to handle `?lang=en` for explicit English selection
+let finalEnLink = enUrl;
+if (!finalEnLink.includes('?')) {
+    finalEnLink += '?lang=en';
+} else if (!finalEnLink.includes('lang=en')) {
+    finalEnLink += '&lang=en';
+}
+
+// Ensure the Turkish link does not contain `?lang=en`
+let finalTrLink = trUrl.replace(/(\?|&)?lang=en(&|$)/g, (match, p1, p2) => {
+    // If it was the only query param or first param, remove '?'
+    if (p1 === '?' && p2 === '') return '';
+    // If it was subsequent param, remove '&'
+    if (p1 === '&') return '&';
+    return ''; // Should not happen with current regex, but safety
+}).replace(/\?$/, ''); // Remove trailing '?' if all params are gone
+
+
 ---
 <header class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,8 +61,8 @@ if (enUrl === '') enUrl = '/';
       <!-- Desktop Menu -->
       <nav class="hidden md:flex space-x-8">
         {nav.map(item => (
-          <a 
-            href={getRelativeLocaleUrl(currentLang, item.href)} 
+          <a
+            href={getRelativeLocaleUrl(currentLang, item.href)}
             class="text-gray-700 hover:text-primary font-medium transition-colors text-sm uppercase tracking-wide"
           >
             {item.label}
@@ -53,15 +72,15 @@ if (enUrl === '') enUrl = '/';
 
       <!-- Lang Switcher -->
       <div class="flex items-center space-x-3 text-sm font-medium border-l border-gray-200 pl-4 ml-4">
-        <a 
-            href={enUrl} 
+        <a
+            href={finalEnLink}
             class={`transition-colors ${currentLang === 'en' ? 'text-primary font-bold' : 'text-gray-400 hover:text-gray-600'}`}
         >
             EN
         </a>
         <span class="text-gray-300">|</span>
-        <a 
-            href={trUrl} 
+        <a
+            href={finalTrLink}
             class={`transition-colors ${currentLang === 'tr' ? 'text-primary font-bold' : 'text-gray-400 hover:text-gray-600'}`}
         >
             TR

@@ -18,6 +18,22 @@ if (currentLang === 'tr') {
     enUrl = currentPath;
 }
 if (enUrl === '') enUrl = '/';
+
+// Construct final URLs for language switcher to handle `?lang=en` for explicit English selection
+let finalEnLink = enUrl;
+if (!finalEnLink.includes('?')) {
+    finalEnLink += '?lang=en';
+} else if (!finalEnLink.includes('lang=en')) {
+    finalEnLink += '&lang=en';
+}
+
+// Ensure the Turkish link does not contain `?lang=en`
+let finalTrLink = trUrl.replace(/(\?|&)?lang=en(&|$)/g, (match, p1, p2) => {
+    if (p1 === '?' && p2 === '') return '';
+    if (p1 === '&') return '&';
+    return '';
+}).replace(/\?$/, '');
+
 ---
 
 <div
@@ -46,15 +62,15 @@ if (enUrl === '') enUrl = '/';
     ))}
     <!-- Language Switcher within mobile menu -->
     <div class="flex items-center space-x-3 text-lg font-medium pt-8">
-        <a 
-            href={enUrl} 
+        <a
+            href={finalEnLink}
             class={`transition-colors ${currentLang === 'en' ? 'text-primary font-bold' : 'text-gray-400 hover:text-gray-600'}`}
         >
             EN
         </a>
         <span class="text-gray-300">|</span>
-        <a 
-            href={trUrl} 
+        <a
+            href={finalTrLink}
             class={`transition-colors ${currentLang === 'tr' ? 'text-primary font-bold' : 'text-gray-400 hover:text-gray-600'}`}
         >
             TR
